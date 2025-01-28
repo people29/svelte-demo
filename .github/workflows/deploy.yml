@@ -31,6 +31,8 @@ jobs:
           envkey_BASE_PATH: '/${{ github.event.repository.name }}'
           envkey_DB_PATH: './data/svelte.db'
           filename: .env
+
+      - name: Check env file
         run: |
           cat .env
 
