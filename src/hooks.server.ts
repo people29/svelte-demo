@@ -9,7 +9,7 @@ import path from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = join(path.dirname(__filename));
 
-const dbPath = join(__dirname, '..', '..', 'svelte-demo/data', 'svelte.db');
+const dbPath = join(__dirname, '..', '..', 'data', 'svelte.db');
 
 console.log('dbPath', dbPath);
 
