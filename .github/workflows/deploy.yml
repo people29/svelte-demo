@@ -20,10 +20,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # - name: Create env file
+      #   run: |
+      #     touch .env
+      #     echo DB_PATH=./data/svelte.db >> .env
+      #     cat .env
       - name: Create env file
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_BASE_PATH: '/${{ github.event.repository.name }}'
+          envkey_DB_PATH: './data/svelte.db'
+          filename: .env
         run: |
-          touch .env
-          echo DB_PATH=./data/svelte.db >> .env
           cat .env
 
       - name: build
