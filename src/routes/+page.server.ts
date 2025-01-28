@@ -11,15 +11,8 @@ export const load: PageServerLoad = async ({ locals }) => {
     const rows = stmt.all();
 
     resolve(rows);
-
-    // db.all<User>(query, (err: Error|null, rows: User[]) => {
-    //   if(err) {
-    //     reject(err);
-    //     return;
-    //   }
-    //   resolve(rows)
-    // })
   })
+
   const rows = await loadDataPromise;
   return {
     users: rows
