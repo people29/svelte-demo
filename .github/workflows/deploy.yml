@@ -20,11 +20,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: 'Create env file'
+      - name: Create env file
         run: |
           touch .env
           echo DB_PATH=./data/svelte.db >> .env
           cat .env
+      - name: Check env file
+        run: cat .env
 
       - name: build
         env:
